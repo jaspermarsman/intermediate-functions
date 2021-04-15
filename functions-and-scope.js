@@ -16,19 +16,20 @@
 
 // ---- Verwachte uitkomst: 6
 
-const grades = [7, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6, 20];
-let amountCumlaude = 0;
+const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 
 function cumLaudeCheck(){
-    for (let i=0; i < grades.length; i++){
+    let amountCumlaude = 0;
+    for (let i = 0; i < grades.length; i++){
         if (grades[i] >= 8){
             amountCumlaude = amountCumlaude +1;
         }
     }
+    return amountCumlaude;
 }
 
-cumLaudeCheck();
-console.log(amountCumlaude);
+const totalCumlaude = cumLaudeCheck();
+console.log("Uitkomst van opdracht 1a: Aantal studenten Cumlaude geslaagd: " + totalCumlaude);
 
 
 
@@ -42,20 +43,18 @@ console.log(amountCumlaude);
 // cumLaude([6, 4, 5]) geeft 0
 // cumLaude([8, 9, 4, 6, 10]) geeft 3
 
-let amountofCumlaude = 0;
-
-
 function cumLaude(gradeslist){
-
-    for (let i=0; i < gradeslist.length; i++){
+    let amountCumlaude = 0;
+    for (let i = 0; i < gradeslist.length; i++){
         if (gradeslist[i] >= 8){
-            amountofCumlaude = amountofCumlaude +1;
+            amountCumlaude = amountCumlaude +1;
         }
     }
+    return amountCumlaude;
 }
 
-cumLaude([0, 9, 8, 7, 9, 9]);
-console.log(amountofCumlaude)
+const amountofCumlaude = cumLaude([0, 9, 8, 7, 9, 9]);
+console.log("Uitkomst van opdracht 1b: Aantal studenten Cumlaude geslaagd: " + amountofCumlaude)
 
 
 /* Opdracht  2: Gemiddeld cijfer */
@@ -74,17 +73,16 @@ console.log(amountofCumlaude)
 //
 
 
-function averageGrade(grades) {
+function averageGrade() {
     const numberInArray = grades.length;
     let sum = 0;
     for (let i = 0; i< grades.length; i++ ){
         sum = sum + grades[i];
     }
-    const average = sum / numberInArray;
-    return average;
+    return sum / numberInArray;
 }
 const result = averageGrade(grades);
-console.log("de gemiddelde score is", result);
+console.log("Uitkomst opdracht 2a: Gemiddelde score is", result);
 
 /* 2b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd averageGrade, die een array van cijfers verwacht (zoals grades) en het gemiddelde cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 2a.
@@ -97,11 +95,10 @@ function averageGradeTwo(grades) {
     for (let i = 0; i< grades.length; i++ ){
         sum = sum + grades[i];
     }
-    const average = sum / numberInArray;
-    return average;
+    return sum / numberInArray;
 }
 const result2 = averageGradeTwo([8, 9, 4, 6, 10]);
-console.log("de gemiddelde score isvan opdracht 2b", result2);
+console.log("Uitkomst opdracht 2b: Gemiddelde score is " + result2);
 
 
 
@@ -116,8 +113,8 @@ console.log("de gemiddelde score isvan opdracht 2b", result2);
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
 
-const result2c = result.toFixed(2)
-console.log(result2c);
+const twoDigits = result.toFixed(2)
+console.log("Uitkomst van opdracht 2c: Op twee decimalen afgerond is " + twoDigits);
 
 
 /* Bonusopdracht: hoogste cijfer */
@@ -131,11 +128,11 @@ console.log(result2c);
 
 // ---- Verwachte uitkomst: 9
 
-function bestGrade(grades) {
+function bestGrade() {
     let highestGrade = 0;
     for (let i = 0; i < grades.length; i ++) {
         if (grades[i] > highestGrade) {
-          highestGrade = test[i];
+          highestGrade = grades[i];
 
         }
 
@@ -143,7 +140,7 @@ function bestGrade(grades) {
     return highestGrade;
 }
 const bestOfClass = bestGrade(grades);
-console.log(bestOfClass);
+console.log("Uitkomst van bonusopdracht 3a: Hoogste cijfer van de klas is " + bestOfClass);
 
 
 
@@ -158,3 +155,17 @@ console.log(bestOfClass);
 // highestGrade(grades) geeft 9
 // highestGrade([6, 4, 5]) geeft 6
 // highestGrade([8, 9, 4, 6, 10]) geeft 10
+
+function bestGrade2(grades) {
+    let highestGrade = 0;
+    for (let i = 0; i < grades.length; i ++) {
+        if (grades[i] > highestGrade) {
+            highestGrade = grades[i];
+
+        }
+
+    }
+    return highestGrade;
+}
+const bestOfClass2 = bestGrade2([8, 9, 4, 6, 10]);
+console.log("Uitkomst van bonusopdracht 3b: Hoogste cijfer van de klas is " + bestOfClass2);
