@@ -20,8 +20,7 @@
 function getEmailDomain(email){
     const indexOfAt = email.indexOf("@")
 //console.log(indexOfAt);
-    const domain = email.substring(indexOfAt);
-    return domain;
+    return email.substring(indexOfAt);
 
 }
 
